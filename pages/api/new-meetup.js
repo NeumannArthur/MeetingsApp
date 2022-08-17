@@ -1,7 +1,6 @@
 import { MongoClient } from 'mongodb';
 // api/new-meetup
 // POST /api/new-meetup
-//mongodb+srv://Arthur:<Arthur123>@cluster0.abqnhca.mongodb.net/?retryWrites=true&w=majority
 
 export default async function handler(req, res) {
 

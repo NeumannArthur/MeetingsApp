@@ -1,8 +1,18 @@
 import MeetupList from '../components/meetups/MeetupList';
 import { MongoClient } from 'mongodb';
+import Head from 'next/head';
+import { Fragment } from 'react';
 
 export default function HomePage(props) { 
-    return <MeetupList meetups={props.meetups} />
+    return (
+        <Fragment>
+            <Head>
+                <title>Meetups</title>
+                <meta name='description' content='Browse a large list of meetups!' />
+            </Head>
+            <MeetupList meetups={props.meetups} />
+        </Fragment>
+    )
 };
 
 export async function getStaticProps() {
