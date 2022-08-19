@@ -15,14 +15,14 @@ export default function HomePage(props) {
     )
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     // fetch data from an API/database
     // read files in file system
 
     const client = await MongoClient.connect('mongodb+srv://Arthur:Arthur123@cluster0.abqnhca.mongodb.net/meetupDatabse?retryWrites=true&w=majority');
     const db = client.db();
 
-    const meetupsCollection = db.collection('meetupsCollection');
+    const meetupsCollection = db.collection('meetupsCollection');x
     const meetups = await meetupsCollection.find().toArray();
 
     client.close();
