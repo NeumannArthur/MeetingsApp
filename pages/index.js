@@ -22,7 +22,7 @@ export async function getServerSideProps() {
     const client = await MongoClient.connect('mongodb+srv://Arthur:Arthur123@cluster0.abqnhca.mongodb.net/meetupDatabse?retryWrites=true&w=majority');
     const db = client.db();
 
-    const meetupsCollection = db.collection('meetupsCollection');x
+    const meetupsCollection = db.collection('meetupsCollection');
     const meetups = await meetupsCollection.find().toArray();
 
     client.close();
